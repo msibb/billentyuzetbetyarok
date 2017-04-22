@@ -60,8 +60,7 @@ namespace billentyuzetbetyarok
                     Console.WriteLine("Rossz hely!");
                     goto setPos;
                 }
-
-            setAlign:
+                
                 Console.WriteLine("Add meg a hajó irányát (0 = horizontális, 1 = vertikális): ");
                 align = (Console.ReadLine() == "0") ? false : true;
 

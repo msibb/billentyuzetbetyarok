@@ -43,7 +43,7 @@ namespace billentyuzetbetyarok
         {
             for (int i= 0; i < map.getSize(); i++)
             {
-                Console.Write(i + 1 + " ");
+                Console.Write((i + 1) + " ");
                 for (int j = 0; j < map.getSize(); j++)
                 {
                     if (map.getMap()[i, j] == 0)
