@@ -6,7 +6,31 @@ using System.Threading.Tasks;
 
 namespace billentyuzetbetyarok
 {
-    class Ships
+    class Ship
     {
+        public int lengs;
+        public int[] pos = new int[2];
+        public bool align;
+
+        public Ship(int[] x_y, int hossz, bool ir){
+            lengs = hossz;
+            pos = x_y;
+            align = ir;
+        } 
+    }
+
+    class Ships {
+        public List<Ship> ships = new List<Ship>();
+
+        public void addShip(Ship ship){
+            ships.Add(ship);
+        }
+
+        pubilc bool searchShip(int x, int y){
+            foreach (Ship value in ships)
+            {
+                
+            }
+        }
     }
 }
