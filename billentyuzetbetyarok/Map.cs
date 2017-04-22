@@ -9,11 +9,12 @@ namespace billentyuzetbetyarok
     class Map
     {
         int size = 8;
-        bool[,] map;
+
+        int[,] map;
 
         public Map()
         {
-            map = new bool[size, size];
+            map = new int[size, size];
         }
 
         public bool addShip(Ship ship)
@@ -24,16 +25,16 @@ namespace billentyuzetbetyarok
 
             if (! align)
             {
-                for (int i = pos[0]; i <= pos[0] + length; i++)
+                for (int i = pos[0]; i < pos[0] + length; i++)
                 {
-                    map[i, pos[1]] = true;
+                    map[i, pos[1]] = 1;
                 }
             }
             else
             {
-                for (int i = pos[1]; i <= pos[1] + length; i++)
+                for (int i = pos[1]; i < pos[1] + length; i++)
                 {
-                    map[pos[0], i] = true;
+                    map[pos[0], i] = 1;
                 }
             }
 
@@ -42,35 +43,46 @@ namespace billentyuzetbetyarok
 
         public bool vanHajo(int[] pos, int length, bool align)
         {
-            bool van = true;
+            bool van = false;
 
-            if (! align && pos[0] + length <= size)
+            if (! align && pos[0] + length < size)
             {
                 for (int i = 0; i <= length; i++)
                 {
-                    if (! map[pos[0] + i, pos[1]])
+                    if (map[pos[0] + i, pos[1]] > 0)
                     {
-                        van = false;
+                        van = true;
                     }
                 }
             }
-            else if(align && pos[0] + length <= size)
+            else if(align && pos[0] + length < size)
             {
                 for (int i = 0; i <= length; i++)
                 {
-                    if (! map[pos[0], pos[1] + i])
+                    if (map[pos[0], pos[1] + i] != 0)
                     {
-                        van = false;
+                        van = true;
                     }
                 }
             }
 
-            return false;
+            return van;
         }
 
         public void setSize(int size)
         {
             this.size = size;
+            this.map = new int[size, size];
+        }
+
+        public int getSize()
+        {
+            return size;
+        }
+
+        public int[,] getMap()
+        {
+            return map;
         }
     }
 }

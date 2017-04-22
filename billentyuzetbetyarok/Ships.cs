@@ -22,8 +22,10 @@ namespace billentyuzetbetyarok
     class Ships {
         public List<Ship> ships = new List<Ship>();
 
-        public void addShip(Ship ship){
+        public Ship addShip(Ship ship){
             ships.Add(ship);
+
+            return ship;
         }
 
         public bool searchShip(int x, int y){
