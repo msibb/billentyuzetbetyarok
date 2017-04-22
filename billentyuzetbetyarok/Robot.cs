@@ -8,14 +8,17 @@ namespace billentyuzetbetyarok
 {
     public class Robot
     {
+        public List<Ships> hajok = new List<Ships>();
 
         public Robot(){
             hajo_lerakas();
         }
 
         public void hajo_lerakas(){
-            Ships peldany = new Ships(); 
+            Random r = new Random();
+
         }
         
+
     }
 }
