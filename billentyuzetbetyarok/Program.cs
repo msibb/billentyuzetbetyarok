@@ -8,8 +8,12 @@ namespace billentyuzetbetyarok
 {
     class Program
     {
+        static int meret;
+
         static void Main(string[] args)
         {
+            Console.WriteLine("mekkora legyen a pálya?");
+            meret = int.Parse(Console.ReadLine());
         }
     }
 }
